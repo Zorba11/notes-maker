@@ -2,9 +2,7 @@ package com.zorba11.notemaker.controllers;
 
 import com.zorba11.notemaker.models.Category;
 import com.zorba11.notemaker.models.Note;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
 import java.util.List;
@@ -23,5 +21,10 @@ public class NotesController {
         );
 
         return notes;
+    }
+
+    @PostMapping
+    public void addNote(@RequestBody Note note) {
+        List<Note> notes = Arrays.asList(note);
     }
 }

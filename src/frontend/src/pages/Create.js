@@ -38,18 +38,20 @@ const Create = () => {
     setTitleError(false);
     setDetailsError(false);
 
-    if (title == '') setTitleError(true);
+    if (title === '') setTitleError(true);
 
-    if (details == '') setDetailsError(true);
+    if (details === '') setDetailsError(true);
 
     if (title && details) {
-      fetch('http://localhost:8000/notes', {
-        method: 'POST',
-        headers: {
-          'Content-type': 'application/json',
-        },
-        body: JSON.stringify({ title, details, category }),
-      }).then(() => history.pushState('/'));
+      // fetch('http://localhost:8080/api/v1/notes', {
+      //   method: 'POST',
+      //   headers: {
+      //     'Content-type': 'application/json',
+      //   },
+      //   body: JSON.stringify({ title, details, category }),
+      // }).then(() => history.pushState('/'));
+
+      console.log(title, details);
     }
   };
 
