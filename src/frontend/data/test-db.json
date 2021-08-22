@@ -1,0 +1,76 @@
+{
+  "notes": [
+    {
+      "title": "Yoshi's birthday bash",
+      "details": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "category": "reminders",
+      "id": 1
+    },
+    {
+      "title": "Complete my ninja training",
+      "details": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took.",
+      "category": "work",
+      "id": 2
+    },
+    {
+      "title": "Order a pizza!",
+      "details": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "category": "todos",
+      "id": 3
+    },
+    {
+      "title": "Mario's bday",
+      "details": "happy bday mario",
+      "category": "reminders",
+      "id": 4
+    },
+    {
+      "title": "Alka's bday",
+      "details": "happy bday alka",
+      "category": "reminders",
+      "id": 5
+    },
+    {
+      "title": "vuvuvu",
+      "details": "vytvgyyvg",
+      "category": "money",
+      "id": 6
+    },
+    {
+      "title": "Add Lottie Animations to this project",
+      "details": "Remind me please !",
+      "category": "reminders",
+      "id": 7
+    },
+    {
+      "title": "vss",
+      "details": "vssv",
+      "category": "work",
+      "id": 8
+    },
+    {
+      "title": "vss",
+      "details": "\n",
+      "category": "work",
+      "id": 9
+    },
+    {
+      "title": "vss",
+      "details": "vs",
+      "category": "work",
+      "id": 10
+    },
+    {
+      "title": "hi",
+      "details": "neo",
+      "category": "todos",
+      "id": 11
+    },
+    {
+      "title": "ava",
+      "details": "vava",
+      "category": "reminders",
+      "id": 12
+    }
+  ]
+}
