@@ -22,24 +22,26 @@ const Notes = () => {
     });
   };
 
+  // grid items based on screen width- similar to having media query
+  const breakpoints = {
+    default: 3,
+    1100: 2,
+    700: 1,
+  };
+
   return (
-    // <Container>
-    //   <Masonry
-    //     breakpointCols={breakpoints}
-    //     className="my-masonry-grid"
-    //     columnClassName="my-masonry-grid-column"
-    //   >
-    //     {notes.map((note) => (
-    //       <div item key={note.id}></div>
-    //     ))}
-    //   </Masonry>
-    // </Container>
     <Container>
-      {notes.map((note) => (
-        <div item key={note.id}>
-          <NoteCard note={note} handleDelete={handleDelete} />
-        </div>
-      ))}
+      <Masonry
+        breakpointCols={breakpoints}
+        className="my-masonry-grid"
+        columnClassName="my-masonry-grid-column"
+      >
+        {notes.map((note) => (
+          <div item key={note.id}>
+            <NoteCard note={note} handleDelete={handleDelete} />
+          </div>
+        ))}
+      </Masonry>
     </Container>
   );
 };
