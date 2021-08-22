@@ -1,19 +1,29 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Notes from './pages/Notes';
 import Create from './pages/Create';
+import { createTheme, ThemeProvider } from '@material-ui/core';
+import { green } from '@material-ui/core/colors';
+
+const theme = createTheme({
+  palette: {
+    secondary: green,
+  },
+});
 
 function App() {
   return (
-    <Router>
-      <Switch>
-        <Route exact path="/">
-          <Notes />
-        </Route>
-        <Route path="/create">
-          <Create />
-        </Route>
-      </Switch>
-    </Router>
+    <ThemeProvider theme={theme}>
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <Notes />
+          </Route>
+          <Route path="/create">
+            <Create />
+          </Route>
+        </Switch>
+      </Router>
+    </ThemeProvider>
   );
 }
 
