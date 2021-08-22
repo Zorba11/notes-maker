@@ -17,7 +17,7 @@ const Notes = () => {
     await fetch('http://localhost:8001/notes' + id, {
       method: 'DELETE',
       headers: {
-        'Content-Type': 'application/json',
+        content: 'application/json',
       },
     });
   };

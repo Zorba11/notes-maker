@@ -3,10 +3,12 @@ import {
   Card,
   CardContent,
   CardHeader,
+  IconButton,
   makeStyles,
   Typography,
 } from '@material-ui/core';
 import { orange, pink, purple, yellow } from '@material-ui/core/colors';
+import { DeleteOutlined } from '@material-ui/icons';
 import React from 'react';
 
 const useStyles = makeStyles({
@@ -38,6 +40,11 @@ const NoteCard = ({ note, handleDelete }) => {
             <Avatar className={classes.avatar}>
               {note.category[0].toUpperCase()}
             </Avatar>
+          }
+          action={
+            <IconButton onClick={() => handleDelete(note.id)}>
+              <DeleteOutlined />
+            </IconButton>
           }
           title={note.title}
           subheader={note.category}
