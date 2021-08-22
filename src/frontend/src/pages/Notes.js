@@ -2,15 +2,25 @@ import { Container } from '@material-ui/core';
 import React, { useEffect } from 'react';
 import { useState } from 'react';
 import Masonry from 'react-masonry-css';
+import NoteCard from '../components/NoteCard';
 
 const Notes = () => {
   const [notes, setNotes] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:8000/notes')
+    fetch('http://localhost:8001/notes')
       .then((res) => res.json())
       .then((data) => setNotes(data));
   }, []);
+
+  const handleDelete = async (id) => {
+    await fetch('http://localhost:8001/notes' + id, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+  };
 
   return (
     // <Container>
@@ -24,11 +34,13 @@ const Notes = () => {
     //     ))}
     //   </Masonry>
     // </Container>
-    <div>
+    <Container>
       {notes.map((note) => (
-        <div>{note.title}</div>
+        <div item key={note.id}>
+          <NoteCard note={note} handleDelete={handleDelete} />
+        </div>
       ))}
-    </div>
+    </Container>
   );
 };
 
