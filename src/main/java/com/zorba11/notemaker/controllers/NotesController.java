@@ -15,7 +15,8 @@ public class NotesController {
    private List<Note> notes = Arrays.asList(
             new Note(1L,"Note 1", "something 1", "Financial"),
             new Note(2L,"Note 2", "something 2","Work"),
-            new Note(4L,"Note 4", "something 4", "Reminder")
+            new Note(3L,"Note 3", "something 3", "Reminder"),
+           new Note(4L,"Note 4", "something 4", "Todos")
     );
 
 

@@ -30,7 +30,7 @@ export default function Create() {
   const [details, setDetails] = useState('');
   const [titleError, setTitleError] = useState(false);
   const [detailsError, setDetailsError] = useState(false);
-  const [category, setCategory] = useState('todos');
+  const [category, setCategory] = useState('Todos');
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -95,17 +95,17 @@ export default function Create() {
             onChange={(e) => setCategory(e.target.value)}
           >
             <FormControlLabel
-              value="financial"
+              value="Financial"
               control={<Radio />}
               label="Financial"
             />
-            <FormControlLabel value="todos" control={<Radio />} label="Todos" />
+            <FormControlLabel value="Todos" control={<Radio />} label="Todos" />
             <FormControlLabel
-              value="reminders"
+              value="Reminders"
               control={<Radio />}
               label="Reminders"
             />
-            <FormControlLabel value="work" control={<Radio />} label="Work" />
+            <FormControlLabel value="Work" control={<Radio />} label="Work" />
           </RadioGroup>
         </FormControl>
 
