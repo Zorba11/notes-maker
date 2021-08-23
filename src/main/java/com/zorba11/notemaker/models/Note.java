@@ -14,5 +14,5 @@ public class Note {
     private Long id;
     private String title;
     private String details;
-    private Category category;
+    private String category;
 }

@@ -9,13 +9,13 @@ import { blue, green, pink, yellow } from '@material-ui/core/colors';
 const useStyles = makeStyles({
   avatar: {
     backgroundColor: (note) => {
-      if (note.category.toLowerCase() === 'work') {
+      if (note.category.toLowerCase() == 'work') {
         return yellow[700];
       }
-      if (note.category.toLowerCase() === 'money') {
+      if (note.category.toLowerCase() == 'financial') {
         return green[500];
       }
-      if (note.category.toLowerCase() === 'todos') {
+      if (note.category.toLowerCase() == 'todos') {
         return pink[500];
       }
 
@@ -26,6 +26,7 @@ const useStyles = makeStyles({
 
 const NoteCard = ({ note, handleDelete }) => {
   const classes = useStyles(note);
+  console.log(note);
 
   return (
     <div>
