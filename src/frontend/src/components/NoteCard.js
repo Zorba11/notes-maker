@@ -5,6 +5,7 @@ import CardContent from '@material-ui/core/CardContent';
 import { Avatar, IconButton, makeStyles, Typography } from '@material-ui/core';
 import { DeleteOutlined, EditOutlined } from '@material-ui/icons';
 import { blue, green, pink, yellow } from '@material-ui/core/colors';
+import Tilt from 'react-parallax-tilt';
 
 const useStyles = makeStyles({
   avatar: {
@@ -30,27 +31,29 @@ const NoteCard = ({ note, handleDelete }) => {
 
   return (
     <div>
-      <Card elevation={3}>
-        <CardHeader
-          avatar={
-            <Avatar className={classes.avatar}>
-              {note.category[0].toUpperCase()}
-            </Avatar>
-          }
-          action={
-            <IconButton onClick={() => handleDelete(note.id)}>
-              <DeleteOutlined />
-            </IconButton>
-          }
-          title={note.title}
-          subheader={note.category}
-        />
-        <CardContent>
-          <Typography variant="body2" color="textSecondary">
-            {note.details}
-          </Typography>
-        </CardContent>
-      </Card>
+      <Tilt tiltMaxAngleX={10} tiltMaxAngleY={10}>
+        <Card elevation={3}>
+          <CardHeader
+            avatar={
+              <Avatar className={classes.avatar}>
+                {note.category[0].toUpperCase()}
+              </Avatar>
+            }
+            action={
+              <IconButton onClick={() => handleDelete(note.id)}>
+                <DeleteOutlined />
+              </IconButton>
+            }
+            title={note.title}
+            subheader={note.category}
+          />
+          <CardContent>
+            <Typography variant="body2" color="textSecondary">
+              {note.details}
+            </Typography>
+          </CardContent>
+        </Card>
+      </Tilt>
     </div>
   );
 };
