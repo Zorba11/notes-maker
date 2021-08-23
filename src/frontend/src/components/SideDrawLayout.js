@@ -49,6 +49,8 @@ const useStyle = makeStyles((theme) => {
     },
     appbar: {
       width: `calc(100% - ${drawerWidth}px)`,
+      backgroundColor: '#d7ffc2',
+      color: '#191a18',
     },
     toolbar: theme.mixins.toolbar,
     date: {
@@ -87,12 +89,12 @@ const SideDrawLayout = ({ children }) => {
     <div className={classes.root}>
       {/* app bar */}
 
-      <AppBar className={classes.appbar} elevation={0}>
+      <AppBar className={classes.appbar} elevation={1}>
         <Toolbar>
           <Typography className={classes.date}>
-            Today is {format(new Date(), 'do MMMM Y')}
+            Today is {format(new Date(), 'dd MMMM Y')}
           </Typography>
-          <Typography>Mario</Typography>
+          <Typography>Neo</Typography>
           <Avatar src="/avatar.png" className={classes.avatar} />
         </Toolbar>
       </AppBar>
@@ -106,7 +108,7 @@ const SideDrawLayout = ({ children }) => {
       >
         <div>
           <Typography variant="h5" className={classes.title}>
-            Ninja Notes
+            Note Maker
           </Typography>
         </div>
 
@@ -128,7 +130,6 @@ const SideDrawLayout = ({ children }) => {
       </Drawer>
 
       {/* contents of the page */}
-
       <div className={classes.page}>
         <div className={classes.toolbar}></div>
         {children}

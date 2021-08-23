@@ -10,8 +10,9 @@ const theme = createTheme({
     secondary: green,
   },
   typography: {
-    fontWeightLight: 300,
-    fontWeightRegular: 500,
+    fontFamily: 'Oxygen',
+    fontWeightLight: 500,
+    fontWeightRegular: 700,
   },
 });
 
