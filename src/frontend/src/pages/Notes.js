@@ -1,10 +1,9 @@
-import { Container } from '@material-ui/core';
-import React, { useEffect } from 'react';
-import { useState } from 'react';
-import Masonry from 'react-masonry-css';
+import React, { useEffect, useState } from 'react';
+import { Container, Grid, Paper } from '@material-ui/core';
 import NoteCard from '../components/NoteCard';
+import Masonry from 'react-masonry-css';
 
-const Notes = () => {
+export default function Notes() {
   const [notes, setNotes] = useState([]);
 
   useEffect(() => {
@@ -20,9 +19,11 @@ const Notes = () => {
         content: 'application/json',
       },
     });
+
+    const newNotes = notes.filter((note) => note.id != id);
+    setNotes(newNotes);
   };
 
-  // grid items based on screen width- similar to having media query
   const breakpoints = {
     default: 3,
     1100: 2,
@@ -34,7 +35,7 @@ const Notes = () => {
       <Masonry
         breakpointCols={breakpoints}
         className="my-masonry-grid"
-        columnClassName="my-masonry-grid-column"
+        columnClassName="my-masonry-grid_column"
       >
         {notes.map((note) => (
           <div item key={note.id}>
@@ -44,6 +45,4 @@ const Notes = () => {
       </Masonry>
     </Container>
   );
-};
-
-export default Notes;
+}

@@ -1,30 +1,25 @@
-import {
-  Avatar,
-  Card,
-  CardContent,
-  CardHeader,
-  IconButton,
-  makeStyles,
-  Typography,
-} from '@material-ui/core';
-import { orange, pink, purple, yellow } from '@material-ui/core/colors';
-import { DeleteOutlined } from '@material-ui/icons';
 import React from 'react';
+import Card from '@material-ui/core/Card';
+import CardHeader from '@material-ui/core/CardHeader';
+import CardContent from '@material-ui/core/CardContent';
+import { Avatar, IconButton, makeStyles, Typography } from '@material-ui/core';
+import { DeleteOutlined, EditOutlined } from '@material-ui/icons';
+import { blue, green, pink, yellow } from '@material-ui/core/colors';
 
 const useStyles = makeStyles({
   avatar: {
     backgroundColor: (note) => {
-      if (note.category === 'work') {
+      if (note.category == 'work') {
         return yellow[700];
       }
-      if (note.category === 'money') {
-        return orange[500];
+      if (note.category == 'money') {
+        return green[500];
       }
-      if (note.category === 'todos') {
+      if (note.category == 'todos') {
         return pink[500];
       }
 
-      return purple[500];
+      return blue[500];
     },
   },
 });
@@ -50,7 +45,7 @@ const NoteCard = ({ note, handleDelete }) => {
           subheader={note.category}
         />
         <CardContent>
-          <Typography variant="body1" color="textSecondary">
+          <Typography variant="body2" color="textSecondary">
             {note.details}
           </Typography>
         </CardContent>
