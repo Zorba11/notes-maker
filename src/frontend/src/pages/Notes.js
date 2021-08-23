@@ -13,7 +13,7 @@ export default function Notes() {
   }, []);
 
   const handleDelete = async (id) => {
-    await fetch('http://localhost:8080/api/v1/notes' + id, {
+    await fetch('http://localhost:8080/api/v1/notes/' + id, {
       method: 'DELETE',
       headers: {
         content: 'application/json',

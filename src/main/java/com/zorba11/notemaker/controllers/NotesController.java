@@ -32,6 +32,4 @@ public class NotesController {
         notes = newNotes;
     }
 
-//    @DeleteMapping
-//    public void
 }
