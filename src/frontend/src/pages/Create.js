@@ -47,7 +47,7 @@ export default function Create() {
     }
 
     if (title && details) {
-      fetch('http://localhost:8001/notes', {
+      fetch('http://localhost:8080/api/v1/notes', {
         method: 'POST',
         headers: {
           'Content-type': 'application/json',
