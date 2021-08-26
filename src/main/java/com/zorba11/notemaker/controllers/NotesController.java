@@ -1,8 +1,11 @@
 package com.zorba11.notemaker.controllers;
 
 import com.zorba11.notemaker.models.Note;
+import com.zorba11.notemaker.services.NoteService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.websocket.server.PathParam;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -11,24 +14,25 @@ import java.util.List;
 @RequestMapping(path="api/v1/notes")
 public class NotesController {
 
-   private List<Note> notes = Arrays.asList(
-            new Note(1L,"Note 1", "something 1", "Financial"),
-            new Note(2L,"Note 2", "something 2","Work"),
-            new Note(3L,"Note 3", "something 3", "Reminder"),
-           new Note(4L,"Note 4", "something 4", "Todos")
-    );
+    @Autowired
+    public NoteService noteService;
 
 
     @GetMapping
     public List<Note> getAllNotes() {
-        return notes;
+        return noteService.getAllNotes();
     }
 
     @PostMapping
-    public void addNote(@RequestBody Note note) {
-        List<Note> newNotes = new ArrayList<>(Arrays.asList(note));
-        newNotes.addAll(notes);
-        notes = newNotes;
+    public String addNote(@RequestBody Note note) {
+        System.out.println("notee.."+note);
+        return noteService.addNote(note);
     }
 
+//
+    @DeleteMapping(value = "/{id}")
+    public String removeNote(@PathVariable Long id) {
+        System.out.println("iddd...."+id);
+        return noteService.removeNote(id);
+    }
 }
