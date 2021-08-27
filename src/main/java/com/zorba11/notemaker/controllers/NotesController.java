@@ -25,14 +25,11 @@ public class NotesController {
 
     @PostMapping
     public String addNote(@RequestBody Note note) {
-        System.out.println("notee.."+note);
         return noteService.addNote(note);
     }
 
-//
     @DeleteMapping(value = "/{id}")
     public String removeNote(@PathVariable Long id) {
-        System.out.println("iddd...."+id);
         return noteService.removeNote(id);
     }
 }
