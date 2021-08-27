@@ -1,5 +1,6 @@
 package com.zorba11.notemaker.services;
 
+import com.zorba11.notemaker.exceptions.BadRequestException;
 import com.zorba11.notemaker.models.Note;
 import com.zorba11.notemaker.repositories.NoteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,11 @@ public class NoteService {
     }
 
     public String addNote(Note note) {
+        Boolean titleExist = noteRepository.isTitleExist(note.getTitle());
+
+        if (titleExist)
+            throw new BadRequestException( "Title " + note.getTitle() + " already in use");
+
         noteRepository.save(note);
         return "Note created succesfully!";
     }
