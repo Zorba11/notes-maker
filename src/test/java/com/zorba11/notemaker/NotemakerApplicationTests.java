@@ -1,5 +1,6 @@
 package com.zorba11.notemaker;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -8,6 +9,7 @@ class NotemakerApplicationTests {
 
 	@Test
 	void contextLoads() {
+		Assertions.fail("oops again!");
 	}
 
 }
