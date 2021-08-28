@@ -11,6 +11,7 @@ env:
   MYSQL_DB: notemaker_aws_rds
   MYSQL_USER: zorba11
   MYSQL_PASSWORD: password
+  MYSQL_ROOT_PASSWORD: password
   JAVA_VERSION: 1.15
 
 jobs:
