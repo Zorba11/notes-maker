@@ -8,8 +8,8 @@ on:
 
 env:
   DB_DATABASE: notemaker_db_docker
-  DB_USER: zorba11
-  DB_PASSWORD: password
+  DB_USER: root
+  DB_PASSWORD: root
   JAVA_VERSION: 1.15
 
 jobs:
