@@ -9,7 +9,7 @@ class NotemakerApplicationTests {
 
 	@Test
 	void contextLoads() {
-//		Assertions.fail("OOoopsie...!!!");
+		Assertions.fail("OOoopsie...!!!");
 	}
 
 }

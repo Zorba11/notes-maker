@@ -7,9 +7,9 @@ on:
   workflow_dispatch:
 
 env:
-  DB_DATABASE: test_db
+  DB_DATABASE: notemaker_aws_rds
   DB_USER: root
-  DB_PASSWORD: root
+  DB_PASSWORD: password
   JAVA_VERSION: 1.15
 
 jobs:
