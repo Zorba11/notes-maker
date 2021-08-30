@@ -9,7 +9,7 @@ on:
 env:
   DB_DATABASE: notemaker_aws_rds
   DB_USER: root
-  DB_PASSWORD: password
+  DB_PASSWORD: root
   JAVA_VERSION: 1.15
   CI: false
 
