@@ -43,9 +43,6 @@ const NoteCard = ({ note, handleDelete }) => {
             action={
               <div>
                 <IconButton>
-                  <EditOutlined onClick={() => console.log("Hi from edit!")} />
-                </IconButton>
-                <IconButton>
                   <DeleteOutlined onClick={() => handleDelete(note.id)} />
                 </IconButton>
               </div>
