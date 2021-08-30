@@ -20,6 +20,7 @@ env:
   EB_ENVIRONMENT_NAME: Notemakertrial-env
   EB_APPLICATION_NAME: notemaker-trial
   EB_DEPLOYMENT_PACKAGE: elasticbeanstalk/docker-compose.yml
+  CI: false
 
 jobs:
   deploy:
