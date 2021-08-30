@@ -1,7 +1,7 @@
 version: "3.9"
 services:
   backend:
-    image: "zorba111/notemaker:1.17"
+    image: "zorba111/notemaker:30.8.2021.21.33.29"
     ports:
       - "80:8080"
     restart: "always"
