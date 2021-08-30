@@ -7,9 +7,9 @@ on:
   workflow_dispatch:
 
 env:
-  DB_DATABASE: notemaker_db_docker
-  DB_USER: root
-  DB_PASSWORD: root
+  DB_DATABASE: notemaker_aws_rds
+  DB_USER: zorba11
+  DB_PASSWORD: password
   JAVA_VERSION: 1.15
   CI: false
 
