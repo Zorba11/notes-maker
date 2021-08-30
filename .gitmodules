@@ -1,3 +1,7 @@
 [submodule "frontend"]
 	path = ./src/frontend
 	url = ./src/frontend
+[submodule "notes-maker"]
+	path = notes-maker
+	url = https://github.com/Zorba11/notes-maker.git
+	branch = master
