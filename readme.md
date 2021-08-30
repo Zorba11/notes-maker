@@ -14,6 +14,7 @@ BackEnd & DevOps
 - Data JPA
 - MySQL 
 - JIB
+- JUnit, Mockito
 - maven-resources-plugin
 - frontend-maven-plugin
 - maven-resources-plugin
