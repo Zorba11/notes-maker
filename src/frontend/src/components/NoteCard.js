@@ -39,10 +39,16 @@ const NoteCard = ({ note, handleDelete }) => {
                 {note.category[0].toUpperCase()}
               </Avatar>
             }
+
             action={
-              <IconButton onClick={() => handleDelete(note.id)}>
-                <DeleteOutlined />
-              </IconButton>
+              <div>
+                <IconButton>
+                  <EditOutlined onClick={() => console.log("Hi from edit!")} />
+                </IconButton>
+                <IconButton>
+                  <DeleteOutlined onClick={() => handleDelete(note.id)} />
+                </IconButton>
+              </div>
             }
             title={note.title}
             subheader={note.category}
