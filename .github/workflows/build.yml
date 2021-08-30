@@ -13,6 +13,8 @@ env:
   JAVA_VERSION: 1.15
   CI: false
 
+#  CI - true, by default this will make the actions CI to consider warnings as errors
+
 jobs:
   build:
     runs-on: ubuntu-latest
