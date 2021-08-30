@@ -4,12 +4,12 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
+//@SpringBootTest
 class NotemakerApplicationTests {
 
 	@Test
 	void contextLoads() {
-//		Assertions.fail("OOoopsie...!!!");
+		Assertions.fail("OOoopsie...!!!");
 	}
 
 }
