@@ -11,6 +11,7 @@ env:
   DB_USER: root
   DB_PASSWORD: root
   JAVA_VERSION: 1.15
+  CI: false
 
 jobs:
   build:
