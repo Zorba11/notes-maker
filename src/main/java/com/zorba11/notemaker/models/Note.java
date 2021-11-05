@@ -18,7 +18,7 @@ public class Note {
 
     @Id
     @GeneratedValue
-    private Long id;
+    private Long note_id;
     @NotNull
     @Column(nullable = false, unique = true)
     private String title;
@@ -26,4 +26,18 @@ public class Note {
     private String details;
     @NotNull
     private String category;
+
+    public Note(String title, String details, String category) {
+        this.title = title;
+        this.details = details;
+        this.category = category;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
 }
