@@ -1,5 +1,6 @@
 package com.zorba11.notemaker.controllers;
 
+import com.zorba11.notemaker.dtos.NoteDTO;
 import com.zorba11.notemaker.models.Note;
 import com.zorba11.notemaker.services.NoteService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,13 +25,13 @@ public class NotesController {
 
 
     @GetMapping
-    public List<Note> getAllNotes() {
+    public List<NoteDTO> getAllNotes() {
         return noteService.getAllNotes();
     }
 
     @PostMapping
-    public String addNote(@Valid @RequestBody Note note) {
-        return noteService.addNote(note);
+    public String addNote(@Valid @RequestBody NoteDTO noteDTO) {
+        return noteService.addNote(noteDTO);
     }
 
     @DeleteMapping(value = "/{id}")

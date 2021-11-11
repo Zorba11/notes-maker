@@ -17,6 +17,8 @@ public interface NoteRepository extends JpaRepository<Note, Long> {
             " where n.title = ?1")
     Boolean isTitleExist(String title);
 
+    List<Note> findAllById(Long userId);
+
 //    List<Note> findByUser(User user, Sort sort);
 
 //    void save(Note note, User user);

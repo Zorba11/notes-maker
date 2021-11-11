@@ -1,4 +1,4 @@
-package config;
+package com.zorba11.notemaker;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
