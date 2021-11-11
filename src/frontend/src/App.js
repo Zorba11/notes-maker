@@ -4,6 +4,7 @@ import Create from './pages/Create';
 import { createTheme, ThemeProvider } from '@material-ui/core';
 import { green, purple } from '@material-ui/core/colors';
 import SideDrawLayout from './components/SideDrawLayout';
+import AllUsers from './pages/AllUsers';
 
 const theme = createTheme({
   palette: {
@@ -27,6 +28,9 @@ function App() {
             </Route>
             <Route path="/create">
               <Create />
+            </Route>
+            <Route path="/users">
+              <AllUsers />
             </Route>
           </Switch>
         </SideDrawLayout>
