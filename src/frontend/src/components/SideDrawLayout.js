@@ -14,6 +14,7 @@ import {
   AddCircleOutlined,
   ExitToAppOutlined,
   SubjectOutlined,
+  PeopleAltRounded
 } from '@material-ui/icons';
 import { format } from 'date-fns';
 import React from 'react';
@@ -63,6 +64,11 @@ const useStyle = makeStyles((theme) => {
 });
 
 const menuItems = [
+  {
+    text: 'All Users',
+    icon: <PeopleAltRounded color="secondary" />,
+    path: '/users',
+  },
   {
     text: 'My Notes',
     icon: <SubjectOutlined color="secondary" />,

@@ -25,6 +25,7 @@ public class NoteMapper {
     }
 
     public Note convertDtoToEntity(NoteDTO noteDTO) {
+
         modelMapper.getConfiguration()
                 .setMatchingStrategy(MatchingStrategies.LOOSE);
 

@@ -1,12 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Container, Grid, Paper } from '@material-ui/core';
+import { Container } from '@material-ui/core';
 import NoteCard from '../components/NoteCard';
 import Masonry from 'react-masonry-css';
+import SearchBar from '../components/SearchBar/SearchBar';
+import { useRecoilValue } from 'recoil';
+import { notesState } from '../atoms/NotesState';
+
 
 export default function Notes() {
   const [notes, setNotes] = useState([]);
   const [networkError, setNetworkError] = useState('');
+  const filteredNotes = useRecoilValue(notesState);
 
   useEffect(() => {
     fetch('api/v1/notes')
@@ -37,6 +42,7 @@ export default function Notes() {
 
   return (
     <Container>
+      <SearchBar data={notes} placeholder="Find notes..." />
       {
         (notes.length < 1) ? <h2>You don't have any notes ! So, <Link to="/create">Create one</Link> 🙂 !</h2>
             :
@@ -45,11 +51,19 @@ export default function Notes() {
                 className="my-masonry-grid"
                 columnClassName="my-masonry-grid_column"
             >
-              {notes.map((note) => (
-                  <div item key={note.id}>
-                    <NoteCard note={note} handleDelete={handleDelete} />
-                  </div>
-              ))}
+            {
+              (filteredNotes.length > 0) ? (filteredNotes.map((note) => (
+                <div item key={note.id}>
+                  <NoteCard note={note} handleDelete={handleDelete} />
+                </div>
+            ))) 
+              : 
+              (notes.map((note) => (
+                <div item key={note.id}>
+                  <NoteCard note={note} handleDelete={handleDelete} />
+                </div>
+            )))
+            }
             </Masonry>
       }
     </Container>

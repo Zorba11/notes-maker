@@ -8,7 +8,7 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.Set;
 
-//@ToString
+@ToString
 @Getter
 @Setter
 //@EqualsAndHashCode
@@ -25,7 +25,7 @@ public class User implements Serializable {
     private String lastName;
     private String email;
 
-//    @JsonIgnore
+    @JsonIgnore
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY,
             cascade = CascadeType.ALL)
     private List<Note> notes;

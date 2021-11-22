@@ -4,6 +4,7 @@ import com.zorba11.notemaker.dtos.NoteDTO;
 import com.zorba11.notemaker.models.Note;
 import com.zorba11.notemaker.services.NoteService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -26,6 +27,7 @@ public class NotesController {
 
     @GetMapping
     public List<NoteDTO> getAllNotes() {
+        System.out.println("hi from getall notes");
         return noteService.getAllNotes();
     }
 

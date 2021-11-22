@@ -8,14 +8,12 @@ import com.zorba11.notemaker.models.Note;
 import com.zorba11.notemaker.models.User;
 import com.zorba11.notemaker.repositories.NoteRepository;
 import com.zorba11.notemaker.repositories.UserRepository;
-import org.modelmapper.ModelMapper;
-import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 @Service
@@ -90,10 +88,36 @@ public class UserService {
     }
 
 
-//    public List<NoteDTO> findAllOtherNotesOfUsers(String searchstr) {
-//
-//        List<User> usersWithTheSearchStr = noteRepository.
-//    }
+    public List<NoteDTO> findAllOtherNotesOfUsers(String searchStr) {
+
+        List<Note> notesWithStr = noteRepository.findByDetailsContaining(searchStr);
+
+        List<User> usersWithStrInNotes =  valueGrabber(notesWithStr, n -> n.getUser());
+
+        List<Note> allNotesOfUsersWithOutStr = new ArrayList<Note>();
+
+        usersWithStrInNotes.forEach(user -> {
+           var notesWithoutStr = noteRepository.findAllNotesOfUserWithoutStr(user, searchStr);
+           allNotesOfUsersWithOutStr.addAll(notesWithoutStr);
+        });
+
+        System.out.println("**********");
+        System.out.println(allNotesOfUsersWithOutStr);
+        System.out.println("**********");
+
+        List<NoteDTO> notesDTO = new ArrayList<>();
+
+        allNotesOfUsersWithOutStr.forEach(note -> {
+                NoteDTO noteDTO = noteMapper.convertEntityToDTO(note);
+                notesDTO.add(noteDTO);
+            });
+
+            return notesDTO;
+    }
+
+    private static <C, T> List<T> valueGrabber(List<C> items, Function<C, T> func) {
+        return items.stream().map(func).collect(Collectors.toList());
+    }
 }
 
 
